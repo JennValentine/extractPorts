@@ -9,7 +9,7 @@ enumera los puertos abiertos y los copia al portapapeles usando xclip.
 
 ## :book: Instalacion
 ```bash
-sudo apt install xclip -y
+sudo apt install -y xclip
 cd /opt
 sudo rm -rf extractPorts
 sudo git clone https://github.com/JennValentine/extractPorts
