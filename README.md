@@ -1,70 +1,50 @@
-﻿![logo](https://github.com/JennValentine/Ping-TTL/blob/main/Imagenes/Ping-TTL.jpg)
+﻿![logo](https://github.com/JennValentine/extractPorts/blob/main/Imagenes/extractPorts.jpg)
 
-# Ping-TTL
+# extractPorts
 
 ## Descripción
-Este script Bash se encarga de realizar un ping a un host proporcionado 
-como argumento y extraer información sobre el sistema operativo del 
-host basándose en el valor de TTL (Time To Live) del resultado del ping. 
+Este script Bash extrae y presenta información sobre puertos abiertos de un escaneo de Nmap.
+Toma el archivo de salida de un escaneo de Nmap como argumento, identifica la dirección IP,
+enumera los puertos abiertos y los copia al portapapeles usando xclip.
 
 ## :book: Instalacion
 ```bash
+sudo apt install -y xclip
 cd /opt
-sudo rm -rf Ping-TTL
-sudo git clone https://github.com/JennValentine/Ping-TTL
-sudo chmod +x Ping-TTL/*
-cd Ping-TTL
+sudo rm -rf extractPorts
+sudo git clone https://github.com/JennValentine/extractPorts
+sudo chmod +x extractPorts/*
+cd extractPorts
 ```
 
 ## :book: Acceso directo
 ```bash
-sudo cp pttl.sh pttl_$RANDOM.sh
-sudo cp pttl.sh pttl
-sudo rm -rf /usr/local/bin/pttl
-sudo mv pttl /usr/local/bin/
+sudo cp extractPorts.sh extractPorts_$RANDOM.sh
+sudo mv extractPorts.sh extractPorts
+sudo rm -rf /usr/bin/extractPorts
+sudo mv extractPorts /usr/local/bin/
 cd
 ```
 
 ## :book: Acceso directo (En caso de error)
 ```bash
 cd
-echo "cd /opt/Ping-TTL && sudo ./pttl.sh" > pttl
-sudo chmod +x pttl
-sudo rm -rf /usr/local/bin/pttl
-sudo mv pttl /usr/local/bin/
+echo "cd /opt/extractPorts.sh && sudo ./extractPorts.sh" > extractPorts 
+sudo chmod +x extractPorts
+sudo rm -rf /usr/local/bin/extractPorts
+sudo mv extractPorts /usr/local/bin/
 cd
 ```
 
 ## Modo de Uso
 
-Ejecutar el script con una dirección IP:
+Ejecute el script con el archivo de salida de Nmap (allPorts.gnmap) como argumento:
 
 ```bash
-pttl 8.8.8.8
+extractPorts allPorts.gnmap
 ```
-Esto enviará un paquete de ping a la dirección IP 8.8.8.8 y tratará de 
-determinar el sistema operativo basándose en el valor de TTL.
-
-Ejecutar el script con un nombre de dominio:
-
-```bash
-pttl google.com
-```
-Similar al primer ejemplo, pero usando un nombre de dominio 
-(google.com en este caso).
-
-Ejecutar el script sin argumentos (para ver el modo de uso):
-
-```bash
-pttl
-```
-Muestra un mensaje explicando cómo usar el script, incluyendo ejemplos.
-
-DATA: Este script es una herramienta simple que proporciona una estimación 
-del sistema operativo basándose en el TTL del ping. Ten en cuenta que 
-esta estimación puede no ser precisa en todos los casos, ya que el valor 
-de TTL puede variar y no garantiza la identificación precisa del sistema 
-operativo.
+DATA: Esto extraerá información sobre los puertos abiertos del allPorts.gnmap proporcionado.
+archivo, visualizarlo y copiar la lista de puertos abiertos al portapapeles.
 
 ## :octocat: Créditos
 1. [Jenn Valentine](https://t.me/JennValentine) - Update Contributor
