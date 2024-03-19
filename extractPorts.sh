@@ -19,12 +19,12 @@ function extractPorts () {
     echo -e "\t\033[1;32m>> Open ports: \033[1;37m$ports\n"
 
     # Verifica si xclip está instalado, si no, intenta instalarlo
-    which xclip > /dev/null 2>&1 || sudo apt install -y xclip
+    which xclip > /dev/null 2>&1 || sudo apt-get install -y xclip
 
     # Copia los puertos a la clipboard utilizando xclip
     echo $ports | tr -d '\n' | xclip -sel clip
 
-    echo -e "\033[1;32m[*] Ports copied to clipboard\n"
+    echo -e "\033[1;32m[++] Ports copied to clipboard\n"
 }
 
 # Llamada a la función extractPorts con el primer argumento pasado al script
