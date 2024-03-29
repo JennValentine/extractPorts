@@ -2,23 +2,26 @@
 
 # extractPorts
 
-## Descripción
+## :information_source: Descripción
 Este script Bash extrae y presenta información sobre puertos abiertos de un escaneo de Nmap.
 Toma el archivo de salida de un escaneo de Nmap como argumento, identifica la dirección IP,
 enumera los puertos abiertos y los copia al portapapeles usando xclip.
 
-## :book: Instalacion
+## :arrow_down: Instalacion
 ```bash
-sudo apt install -y xclip
+sudo apt-get install -y xclip
 cd /opt
 sudo rm -rf extractPorts
 sudo git clone https://github.com/JennValentine/extractPorts
 sudo chmod +x extractPorts/*
 cd extractPorts
+ls -lthas
 ```
 
 ## :book: Acceso directo
 ```bash
+cd
+cd /opt/extractPorts
 sudo cp extractPorts.sh extractPorts_$RANDOM.sh
 sudo mv extractPorts.sh extractPorts
 sudo rm -rf /usr/bin/extractPorts
@@ -26,25 +29,15 @@ sudo mv extractPorts /usr/local/bin/
 cd
 ```
 
-## :book: Acceso directo (En caso de error)
-```bash
-cd
-echo "cd /opt/extractPorts.sh && sudo ./extractPorts.sh" > extractPorts 
-sudo chmod +x extractPorts
-sudo rm -rf /usr/local/bin/extractPorts
-sudo mv extractPorts /usr/local/bin/
-cd
-```
+## :hammer: Modo de Uso
 
-## Modo de Uso
-
-Ejecute el script con el archivo de salida de Nmap (allPorts.gnmap) como argumento:
+Ejecutar el script con el archivo de salida de Nmap (allPorts.gnmap) como argumento:
 
 ```bash
 extractPorts allPorts.gnmap
 ```
-DATA: Esto extraerá información sobre los puertos abiertos del allPorts.gnmap proporcionado.
-archivo, visualizarlo y copiar la lista de puertos abiertos al portapapeles.
+:books: DATA: Esto extraerá información sobre los puertos abiertos del archivo allPorts.gnmap proporcionado. 
+ademas de ser visualizado en pantalla y copiado al portapapeles.
 
 ## :octocat: Créditos
 1. [Jenn Valentine](https://t.me/JennValentine) - Update Contributor
