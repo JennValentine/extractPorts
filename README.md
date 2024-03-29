@@ -37,7 +37,7 @@ Ejecutar el script con el archivo de salida de Nmap (allPorts.gnmap) como argume
 extractPorts allPorts.gnmap
 ```
 :books: DATA: Esto extraerá información sobre los puertos abiertos del archivo allPorts.gnmap proporcionado. 
-ademas de ser visualizado en pantalla y copiado al portapapeles.
+Además de ser visualizado en pantalla y copiado al portapapeles.
 
 ## :octocat: Créditos
 1. [Jenn Valentine](https://t.me/JennValentine) - Update Contributor
