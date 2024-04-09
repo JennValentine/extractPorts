@@ -1,6 +1,6 @@
 #!/bin/bash
 #====================================================
-#   SCRIPT:                   PING TTL
+#   SCRIPT:                   EXTRACT PORTS
 #   DESARROLLADO POR:         JENN VALENTINE 
 #   FECHA DE ACTUALIZACIÃ“N:  01-04-2024 
 #   CONTACTO POR TELEGRAMA:   https://t.me/JennValentine
