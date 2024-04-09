@@ -1,4 +1,4 @@
-﻿![logo](https://github.com/JennValentine/extractPorts/blob/main/Imagenes/extractPorts.jpg)
+﻿![logo](https://edteam-media.s3.amazonaws.com/blogs/big/2ab53939-9b50-47dd-b56e-38d4ba3cc0f0.png)
 
 # extractPorts
 
@@ -36,6 +36,7 @@ Ejecutar el script con el archivo de salida de Nmap (allPorts.gnmap) como argume
 ```bash
 extractPorts allPorts.gnmap
 ```
+![logo](https://github.com/JennValentine/extractPorts/blob/main/Imagenes/extractPorts.jpg)
 :books: DATA: Esto extraerá información sobre los puertos abiertos del archivo allPorts.gnmap proporcionado. 
 Además de ser visualizado en pantalla y copiado al portapapeles.
 

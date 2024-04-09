@@ -1,6 +1,34 @@
 #!/bin/bash
+#====================================================
+#   SCRIPT:                   PING TTL
+#   DESARROLLADO POR:         JENN VALENTINE 
+#   FECHA DE ACTUALIZACIÃ“N:  01-04-2024 
+#   CONTACTO POR TELEGRAMA:   https://t.me/JennValentine
+#   GITHUB OFICIAL:           https://github.com/JennValentine/extractPorts
+#====================================================
+
+# Paleta de colores
+reset="\033[0m"       # Restablecer todos los estilos y colores
+
+# Colores de texto
+black="\033[0;30m"     # Negro
+red="\033[0;31m"       # Rojo
+green="\033[0;32m"     # Verde
+yellow="\033[0;33m"    # Amarillo
+blue="\033[0;34m"      # Azul
+magenta="\033[0;35m"   # Magenta
+cyan="\033[0;36m"      # Cian
+white="\033[0;37m"     # Blanco
+
+checkmark="${green}[++]${reset}"
+error="${red}[--]${reset}"
+info="${yellow}[**]${reset}"
+process="${magenta}[>>]${reset}"
+
+barra="${blue}|--------------------------------------------|${reset}"
 
 #=============================================================================
+# Para inplementar en la zsh
 # which xclip || sudo apt install xclip -y
 # sudo nano ~/.zshrc
 # source ~/.zshrc
@@ -14,9 +42,9 @@ function extractPorts () {
     ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
 
     # Imprime la información en un formato legible
-    echo -e "\n\033[1;33m[**] Extracting information...\n"
-    echo -e "\t\033[1;32m>> IP Address: \033[1;37m$ip_address"
-    echo -e "\t\033[1;32m>> Open ports: \033[1;37m$ports\n"
+    echo -e "\n${info} ${green} Extracting information...\n"
+    echo -e "\t${green}==> IP Address: \033[1;37m$ip_address"
+    echo -e "\t${green}==> Open ports: \033[1;37m$ports\n"
 
     # Verifica si xclip está instalado, si no, intenta instalarlo
     which xclip > /dev/null 2>&1 || sudo apt-get install -y xclip
@@ -24,7 +52,9 @@ function extractPorts () {
     # Copia los puertos a la clipboard utilizando xclip
     echo $ports | tr -d '\n' | xclip -sel clip
 
-    echo -e "\033[1;32m[++] Ports copied to clipboard\n"
+    echo -e "\n${checkmark} ${green}Ports copied to clipboard"
+
+    echo -e "\n${yellow}${info} ${white}GITHUB OFICIAL: ${green}https://github.com/JennValentine/extractPorts\n"
 }
 
 # Llamada a la función extractPorts con el primer argumento pasado al script
