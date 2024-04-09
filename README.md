@@ -24,7 +24,7 @@ cd
 cd /opt/extractPorts
 sudo cp extractPorts.sh extractPorts_$RANDOM.sh
 sudo mv extractPorts.sh extractPorts
-sudo rm -rf /usr/bin/extractPorts
+sudo rm -rf /usr/local/bin/extractPorts
 sudo mv extractPorts /usr/local/bin/
 cd
 ```
