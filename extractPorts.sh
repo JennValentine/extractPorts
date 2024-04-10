@@ -20,12 +20,14 @@ magenta="\033[0;35m"   # Magenta
 cyan="\033[0;36m"      # Cian
 white="\033[0;37m"     # Blanco
 
+# Iconos
 checkmark="${green}[++]${reset}"
 error="${red}[--]${reset}"
 info="${yellow}[**]${reset}"
 process="${magenta}[>>]${reset}"
 indicator="${red}==>${reset}"
 
+# Barra de separación
 barra="${blue}|--------------------------------------------|${reset}"
 
 #=============================================================================
