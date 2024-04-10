@@ -24,12 +24,15 @@ checkmark="${green}[++]${reset}"
 error="${red}[--]${reset}"
 info="${yellow}[**]${reset}"
 process="${magenta}[>>]${reset}"
+indicator="${red}==>${reset}"
 
 barra="${blue}|--------------------------------------------|${reset}"
 
 #=============================================================================
 # Para inplementar en la zsh
-# which xclip || sudo apt install xclip -y
+#
+# which xclip || sudo apt-get install -y xclip
+#
 # sudo nano ~/.zshrc
 # source ~/.zshrc
 # sudo reboot
@@ -43,8 +46,8 @@ function extractPorts () {
 
     # Imprime la información en un formato legible
     echo -e "\n${info} ${green} Extracting information...\n"
-    echo -e "\t${green}==> IP Address: \033[1;37m$ip_address"
-    echo -e "\t${green}==> Open ports: \033[1;37m$ports\n"
+    echo -e "\t${indicator} ${green}IP Address: \033[1;37m$ip_address"
+    echo -e "\t${indicator} ${green}Open ports: \033[1;37m$ports\n"
 
     # Verifica si xclip está instalado, si no, intenta instalarlo
     which xclip > /dev/null 2>&1 || sudo apt-get install -y xclip
