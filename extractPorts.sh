@@ -66,7 +66,7 @@ function extractPorts () {
     # Imprime la información en un formato legible
     echo -e "\n${info} ${green} Extracting information...\n"
     echo -e "\t${indicator} ${green}IP Address: \033[1;37m$ip_address"
-    echo -e "\t${indicator} ${green}Open ports: \033[1;37m$ports\n"
+    echo -e "\t${indicator} ${green}Open ports: \033[1;37m$ports"
 
     # Verifica si xclip está instalado, si no, intenta instalarlo
     which xclip > /dev/null 2>&1 || sudo apt-get install -y xclip
