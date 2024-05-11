@@ -20,7 +20,6 @@ ls -lthas
 
 ## :book: Acceso directo
 ```bash
-cd
 cd /opt/extractPorts
 sudo cp extractPorts.sh extractPorts_$RANDOM.sh
 sudo mv extractPorts.sh extractPorts
