@@ -2,7 +2,7 @@
 #====================================================
 #   SCRIPT:                   EXTRACT PORTS
 #   DESARROLLADO POR:         JENN VALENTINE 
-#   FECHA DE ACTUALIZACI√É‚ÄúN:  01-04-2024 
+#   FECHA DE ACTUALIZACI”N:   01-04-2024 
 #   CONTACTO POR TELEGRAMA:   https://t.me/JennValentine
 #   GITHUB OFICIAL:           https://github.com/JennValentine/extractPorts
 #====================================================
@@ -43,12 +43,12 @@ info="${yellow}[**]${reset}"
 process="${magenta}[>>]${reset}"
 indicator="${red}==>${reset}"
 
-# Barra de separaci√≥n
+# Barra de separaciÛn
 barra="${blue}|--------------------------------------------|${reset}"
 bar="${yellow}--------------------------------------------${reset}"
 
 #=============================================================================
-# Para inplementar en la zsh
+# Para implementar en la zsh
 #
 # which xclip || sudo apt-get install -y xclip
 #
@@ -58,30 +58,54 @@ bar="${yellow}--------------------------------------------${reset}"
 #=============================================================================
 
 function extractPorts () {
-    # Extrae los n√∫meros de puerto de la forma "xxxx/open" del archivo proporcionado
-    ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
-    # Identifica la direcci√≥n IP √∫nica del archivo
-    ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
+    # Verifica que se ha proporcionado un archivo como argumento
+    if [ -z "$1" ]; then
+        echo -e "\n${green}EXTRACT PORTS"
+        echo -e "\n${green}Uso:${reset}\n"
+        echo -e "${white}  Ejemplo de uso:${reset}\t\t${green}extractPorts allPorts.gnmap"
+        echo -e "\n${info} ${white}GITHUB OFICIAL: ${green}https://github.com/JennValentine/extractPorts\n"
+        echo -e "$barra"
+        exit 1
+    fi
 
-    # Imprime la informaci√≥n en un formato legible
-    echo -e "\n${info} ${green} Extracting information...\n"
-    echo -e "\t${indicator} ${green}IP Address: \033[1;37m$ip_address"
-    echo -e "\t${indicator} ${green}Open ports: \033[1;37m$ports"
+    # Verifica que el archivo proporcionado existe
+    if [ ! -f "$1" ]; then
+        echo -e "\n${error} ${red}ERROR: El archivo proporcionado no existe.${reset}"
+        exit 1
+    fi
 
-    # Verifica si xclip est√° instalado, si no, intenta instalarlo
-    which xclip > /dev/null 2>&1 || sudo apt-get install -y xclip
+    # Extrae los n˙meros de puerto de la forma "xxxx/open" del archivo proporcionado
+    ports=$(grep -oP '\d{1,5}/open' "$1" | awk '{print $1}' FS='/' | xargs | tr ' ' ',')
+    # Identifica la direcciÛn IP ˙nica del archivo
+    ip_address=$(grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' "$1" | sort -u | head -n 1)
 
-    # Copia los puertos a la clipboard utilizando xclip
-    echo $ports | tr -d '\n' | xclip -sel clip
+    # Verifica si se encontraron puertos abiertos
+    if [ -z "$ports" ]; then
+        echo -e "\n${error} ${red}ERROR: No se encontraron puertos abiertos en el archivo.${reset}"
+        exit 1
+    fi
 
-    echo -e "\n${checkmark} ${green}Ports copied to clipboard"
+    # Imprime la informaciÛn en un formato legible
+    echo -e "\n${info} ${green}Extrayendo informaciÛn...\n"
+    echo -e "\t${indicator} ${green}DirecciÛn IP: \033[1;37m$ip_address"
+    echo -e "\t${indicator} ${green}Puertos abiertos: \033[1;37m$ports"
+
+    # Verifica si xclip est· instalado, si no, intenta instalarlo
+    if ! which xclip > /dev/null 2>&1; then
+        echo -e "${info} ${yellow}Instalando xclip...${reset}"
+        sudo apt-get install -y xclip
+    fi
+
+    # Copia los puertos al portapapeles utilizando xclip
+    echo -n "$ports" | xclip -sel clip
+
+    echo -e "\n${checkmark} ${green}Puertos copiados al portapapeles${reset}"
 
     echo -e "\n${yellow}${info} ${white}GITHUB OFICIAL: ${green}https://github.com/JennValentine/extractPorts\n"
     echo -e "$barra"
 }
 
-# Llamada a la funci√≥n extractPorts con el primer argumento pasado al script
-# Puedes usar el script pas√°ndole el nombre del archivo como argumento, por ejemplo: ./script.sh archivo.txt
+# Llamada a la funciÛn extractPorts con el primer argumento pasado al script
 extractPorts "$1"
 
 # Fin del script
