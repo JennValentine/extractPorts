@@ -9,7 +9,6 @@ enumera los puertos abiertos y los copia al portapapeles usando xclip.
 
 ## :computer: Instalación
 ```bash
-sudo apt-get install -y xclip
 cd /opt
 sudo rm -rf extractPorts
 sudo git clone https://github.com/JennValentine/extractPorts
@@ -26,6 +25,11 @@ sudo mv extractPorts.sh extractPorts
 sudo rm -rf /usr/local/bin/extractPorts
 sudo mv extractPorts /usr/local/bin/
 cd
+```
+
+## :wrench: Requisitos
+```bash
+sudo apt-get install -y xclip
 ```
 
 ## :rocket: Modo de Uso
