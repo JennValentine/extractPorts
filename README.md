@@ -44,4 +44,4 @@ extractPorts allPorts.gnmap
 Además de ser visualizado en pantalla y copiado al portapapeles.
 
 ## :email: Contacto
-* :busts_in_silhouette: [Jenn Valentine](https://t.me/JennValentine) - Update Contributor :octocat:
+* :busts_in_silhouette: [Jenn Valentine](https://t.me/JennValentine) - Contribución :octocat:
