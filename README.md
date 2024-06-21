@@ -27,7 +27,7 @@ sudo mv extractPorts /usr/local/bin/
 cd
 ```
 
-## :wrench: Requisitos
+## :package: Paquete
 ```bash
 sudo apt-get install -y xclip
 ```
