@@ -2,7 +2,7 @@
 #====================================================
 #   SCRIPT:                   EXTRACT PORTS
 #   DESARROLLADO POR:         JENN VALENTINE 
-#   FECHA DE ACTUALIZACIÓN:   01-04-2024 
+#   FECHA DE ACTUALIZACIÃ“N:   01-04-2024
 #   CONTACTO POR TELEGRAMA:   https://t.me/JennValentine
 #   GITHUB OFICIAL:           https://github.com/JennValentine/extractPorts
 #====================================================
@@ -36,14 +36,15 @@ bg_magenta="\033[0;45m"   # Fondo Magenta
 bg_cyan="\033[0;46m"      # Fondo Cian
 bg_white="\033[0;47m"     # Fondo Blanco
 
-# Iconos
-checkmark="${green}[++]${reset}"
-error="${red}[--]${reset}"
-info="${yellow}[**]${reset}"
-process="${magenta}[>>]${reset}"
+# Iconos v3
+checkmark="${white}[${green}++${white}]${green}"
+error="${white}[${red}--${white}]${reset}"
+info="${white}[${yellow}**${white}]${white}"
+unknown="${white}[${blue}!!${white}]${reset}"
+process="${white}[${magenta}>>${white}]${magenta}"
 indicator="${red}==>${reset}"
 
-# Barra de separación
+# Barra de separaciÃ³n
 barra="${blue}|--------------------------------------------|${reset}"
 bar="${yellow}--------------------------------------------${reset}"
 
@@ -74,9 +75,9 @@ function extractPorts () {
         exit 1
     fi
 
-    # Extrae los números de puerto de la forma "xxxx/open" del archivo proporcionado
+    # Extrae los nÃƒÂºmeros de puerto de la forma "xxxx/open" del archivo proporcionado
     ports=$(grep -oP '\d{1,5}/open' "$1" | awk '{print $1}' FS='/' | xargs | tr ' ' ',')
-    # Identifica la dirección IP única del archivo
+    # Identifica la direcciÃ³n IP ÃƒÂºnica del archivo
     ip_address=$(grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' "$1" | sort -u | head -n 1)
 
     # Verifica si se encontraron puertos abiertos
@@ -85,14 +86,14 @@ function extractPorts () {
         exit 1
     fi
 
-    # Imprime la información en un formato legible
-    echo -e "\n${info} ${green}Extrayendo información...\n"
-    echo -e "\t${indicator} ${green}Dirección IP: \033[1;37m$ip_address"
+    # Imprime la informaciÃ³n en un formato legible
+    echo -e "\n${info} ${green}Extrayendo informaciÃ³n...\n"
+    echo -e "\t${indicator} ${green}DirecciÃ³n IP: \033[1;37m$ip_address"
     echo -e "\t${indicator} ${green}Puertos abiertos: \033[1;37m$ports"
 
-    # Verifica si xclip está instalado, si no, intenta instalarlo
+    # Verifica si xclip estÃƒÂ¡ instalado, si no, intenta instalarlo
     if ! which xclip > /dev/null 2>&1; then
-        echo -e "${info} ${yellow}Instalando xclip...${reset}"
+        echo -e "\n${info} ${yellow}Instalando xclip...${reset}"
         sudo apt-get install -y xclip
     fi
 
@@ -105,7 +106,7 @@ function extractPorts () {
     echo -e "$barra"
 }
 
-# Llamada a la función extractPorts con el primer argumento pasado al script
+# Llamada a la funciÃ³n extractPorts con el primer argumento pasado al script
 extractPorts "$1"
 
 # Fin del script
