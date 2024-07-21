@@ -29,7 +29,7 @@ cd
 
 ## :computer: Instalación en una Línea
 ```bash
-wget https://raw.githubusercontent.com/JennValentine/extractPorts/main/install.sh; sudo chmod +x install.sh; sudo ./install.sh
+wget https://raw.githubusercontent.com/JennValentine/extractPorts/main/install.sh; sudo chmod +x install.sh; sudo ./install.sh; sudo rm -rf install.sh
 ```
 
 ## :package: Paquete
