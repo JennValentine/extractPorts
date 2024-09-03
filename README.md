@@ -1,6 +1,6 @@
-﻿![logo](https://edteam-media.s3.amazonaws.com/blogs/big/2ab53939-9b50-47dd-b56e-38d4ba3cc0f0.png)
+﻿![logo](https://img.freepik.com/vector-premium/pelirroja-anime-error-404-pagina-no-encontrada_150972-657.jpg?w=826)
 
-# extractPorts
+# extractPorts :octocat: 
 
 ## :information_source: Descripción
 Este script Bash extrae y presenta información sobre puertos abiertos de un escaneo de Nmap.
@@ -45,8 +45,30 @@ Ejecutar el script con el archivo de salida de Nmap (allPorts.gnmap) como argume
 extractPorts allPorts.gnmap
 ```
 ![logo](https://github.com/JennValentine/extractPorts/blob/main/Imagenes/extractPorts.jpg)
-:memo: Notas: Esto extraerá información sobre los puertos abiertos del archivo allPorts.gnmap proporcionado. 
+:memo: Esto extraerá información sobre los puertos abiertos del archivo allPorts.gnmap proporcionado. 
 Además de ser visualizado en pantalla y copiado al portapapeles.
 
+## :hammer_and_wrench: Requisitos 
+
+- Sistema Operativo: Linux/Unix
+- Dependencias: Bash
+
+## :open_file_folder: Estructura del Repositorio
+
+```plaintext
+Ping-TTL/
+│
+├── Imagenes/            # Carpeta que contiene imágenes de ejemplos y del script en ejecución.
+│   └── extractPorts.jpg
+│
+├── LICENSE              # Licencia MIT para el proyecto.
+│
+├── README.md            # Archivo README con la documentación del proyecto.
+│
+├── install.sh           # Script de instalación automática.
+│
+└── extractPorts.sh      # Script principal que realiza la extracción de información.
+```
+
 ## :email: Contacto
-* :busts_in_silhouette: [Jenn Valentine](https://t.me/JennValentine) - Contribución :octocat:
+* :busts_in_silhouette: [Jenn Valentine](https://t.me/JennValentine) - Contribución
