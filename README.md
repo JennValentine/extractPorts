@@ -56,7 +56,7 @@ Además de ser visualizado en pantalla y copiado al portapapeles.
 ## :open_file_folder: Estructura del Repositorio
 
 ```plaintext
-Ping-TTL/
+extractPorts/
 │
 ├── Imagenes/            # Carpeta que contiene imágenes de ejemplos y del script en ejecución.
 │   └── extractPorts.jpg
