@@ -27,14 +27,14 @@ sudo mv extractPorts /usr/local/bin/
 cd
 ```
 
-## :computer: Instalación en una Línea
-```bash
-wget https://raw.githubusercontent.com/JennValentine/extractPorts/main/install.sh; sudo chmod +x install.sh; sudo ./install.sh; sudo rm -rf install.sh
-```
-
 ## :package: Paquete
 ```bash
 sudo apt-get install -y xclip
+```
+
+## :computer: Instalación en una Línea
+```bash
+wget https://raw.githubusercontent.com/JennValentine/extractPorts/main/install.sh; sudo chmod +x install.sh; sudo ./install.sh; sudo rm -rf install.sh
 ```
 
 ## :rocket: Modo de Uso
